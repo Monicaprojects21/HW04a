@@ -13,7 +13,7 @@ if __name__ == '__main__':
     unittest.main()
     """
     Monica Malamputti
-SSW-567: SW Testing, Qual. Assur. & Maint
+SSW-567
 Fall 2022
 HW 04a: Develop with the Perspective of the Tester in mind
 """
