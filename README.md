@@ -7,4 +7,4 @@ Ans. I had to study this website, https://docs.github.com/en/rest, to learn abou
 
 Configuring the config.yml file presented a hurdle for me during this. To receive my success status for this assignment, about 15 CircleCI actions were required.
 
-[![Monica Mallamputti](https://circleci.com/gh/Monicaprojects21/HW04a.svg?style=svg)](https://app.circleci.com/pipelines/github/Monicaprojects/HW04a?branch=main&filter=all)
+[![Monicaprojects21](https://circleci.com/gh/Monicaprojects21/HW04a.svg?style=svg)](https://app.circleci.com/pipelines/github/Monicaprojects21/HW04a?branch=main&filter=all)
