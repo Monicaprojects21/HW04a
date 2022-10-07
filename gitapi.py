@@ -1,5 +1,5 @@
 """
-Nihar Shah
+Monica Mallamputti
 SSW-567: SW Testing, Qual. Assur. & Maint
 Fall 2022
 HW 04a: Develop with the Perspective of the Tester in mind
