@@ -16,9 +16,9 @@ jobs:
           name: Run Test
           command: |
             pip install requests
-            pytest --testxml=test-results/test.xml Testgitapi.py
+            pytest --junitxml=test_results/test.xml Testgitapi.py
       - store_test_results:
-          path: test-results
+          path: test_results
 workflows:
   ssw567:
     jobs:
