@@ -3,10 +3,15 @@ import unittest
 from gitapi import githubapi
 
 class Testgithubapi(unittest.TestCase):
-    def testGithub(self):
+    def testGit(self):
         self.assertEqual(githubapi('?'), False)
-    def testGithub2(self):
+    def testGit2(self):
         self.assertEqual(githubapi('Monicaprojects21'), True)
+    def testGit3(self):
+        self.assertEqual(githubapi('HW04'), False)
+    def testGit4(self):
+            self.assertEqual(githubapi('00'), True)
+
 
 if __name__ == '__main__':
     print("Test cases are running")
