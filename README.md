@@ -8,3 +8,5 @@ Ans. I had to search for references to learn about requests and the Github API. 
 Configuring the config.yml file presented a hurdle for me during this. To receive my success status for this assignment, about 15 CircleCI actions were required.
 
 [![Monicaprojects21](https://circleci.com/gh/Monicaprojects21/HW04a.svg?style=svg)](https://app.circleci.com/pipelines/github/Monicaprojects21/HW04a?branch=main&filter=all)
+
+<img width="1440" alt="Screen Shot 2022-10-12 at 11 52 57 PM" src="https://user-images.githubusercontent.com/112512124/195495754-c26e1966-39b4-4cda-ac56-73c74ad7bbf5.png">
