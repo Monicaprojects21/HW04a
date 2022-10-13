@@ -1,32 +1,26 @@
 import json
 import unittest
-# import unittest.mock
-# from unittest.mock import patch
+import unittest.mock
+from unittest.mock import patch
 from unittest import mock
 from unittest.mock import Mock
 from hw05a import getCommitnum, getUserRepos
 
-class DummyObject(object):
-    def __init__(self, content):
-        self.content = content
+import gitapi
 
 class TestHw04a(unittest.TestCase):
         
-    @mock.patch('requests.get')
-    def testValidInput1(self, mocked_reqs):
-        """ this mocks GitHub returning JSON with two repositories.  The second and third are the JSON details about the number of commits """
-        mocked_reqs.side_effect = [
-            # Each nested dictionary below is like an individual repo - 
-            # the first response emulates the github request to get all repos
-            # the subsequent responses emulate the details associated with each of the repos in mockedResponses[0]
-            DummyObject(b'[{"id" : "146485002", "name" : "hello-world"}, {"id" : "147696620", "name" : "Triangle567"}]'),
-            DummyObject(b'[{"commit": "You want a commit?"}, {"commit": "Leave me alone."}, {"commit": "Alright,what you want?"}]'),
-            DummyObject(b'[{"comit": "No, not again."}, {"commit": "You wanna fight?"}]')]
-
-
-        self.assertEqual(getCommitnum("", "hello-world"), 2)  #YOUR TEST HERE
-        self.assertEqual(getCommitnum("", "Triangle567"), 3)  #YOUR TEST HERE
-        
+    @patch("gitapi.githubapi",return_value=['Repo: CS-541-Artificial-Intelligence  Number of commits: 23', 'Repo: CS-546-Web-Programming  Number of commits: 12', 'Repo: CS-550  Number of commits: 1', 'Repo: CS-554  Number of commits: 30', 'Repo: CS-554-Web-Programming  Number of commits: 1', 'Repo: CS-562-DBMS2-Project  Number of commits: 2', 'Repo: CS-570-Data-Structures  Number of commits: 1', 'Repo: cs546b_group22_final_project  Number of commits: 30', 'Repo: CS555_A_Project_SpiritualBliss  Number of commits: 30', 'Repo: CSS-554-WebProgramming-II  Number of commits: 1', 'Repo: CS_554_Group_Project_The_mutables  Number of commits: 30'])
+    #@patch.object(, "fetch_user_repo")
+    def test_fetch_user_repo_mock_api(self, mock_fetch_user_repo):
+        response_file = open('./response_fetch_user_repo.json')        
+        repo_call_response = json.load(response_file)
+        mock_fetch_user_repo.return_value = Mock(status_code = 200)
+        mock_fetch_user_repo.json.return_value = repo_call_response
+        response = gitapi.githubapi('yash171298')
+        print(response)
+        #self.assertEqual(response.json()[0]['name'],"chatbot_ner")
+        response_file.close()
        
 
 
