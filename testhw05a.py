@@ -16,10 +16,10 @@ class TestHw04a(unittest.TestCase):
         response_file = open('./response_fetch_user_repo.json')        
         repo_call_response = json.load(response_file)
         mock_fetch_user_repo.return_value = Mock(status_code = 200)
-        mock_fetch_user_repo.json.return_value = repo_call_response
+        mock_fetch_user_repo.return_value.json = repo_call_response
         response = gitapi.githubapi('yash171298')
-        print(response)
-        #self.assertEqual(response.json()[0]['name'],"chatbot_ner")
+        #print(response)
+        self.assertEqual(response.json[0]['name'],"chatbot_ner")
         response_file.close()
        
 
